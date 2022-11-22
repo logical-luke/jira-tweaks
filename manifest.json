@@ -1,0 +1,34 @@
+{
+    "name": "Jira Tweaks",
+    "version": "1.0.0",
+    "description": "Add small tweaks for Jira",
+    "manifest_version": 3,
+    "author": "logical-luke",
+    "content_scripts": [
+        {
+            "matches": ["https://*.atlassian.net/*"],
+            "all_frames": true,
+            "js": ["swimlane-column-count.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["https://*.atlassian.net/*"],
+            "all_frames": true,
+            "js": ["jira-branch.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}
